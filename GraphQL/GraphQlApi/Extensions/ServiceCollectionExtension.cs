@@ -9,8 +9,12 @@ namespace GraphQlApi.Extensions
         {
              services.AddGraphQLServer()
              .AddQueryType(q=>q.Name("northwind"))
-              .AddTypeExtension<QueryTypes.EmployeeGraphQlType>()
-             .AddTypeExtension<QueryTypes.CustomerQueryType>();
+             .AddTypeExtension<QueryTypes.EmployeeGraphQlType>()
+             .AddTypeExtension<QueryTypes.CustomerQueryType>()
+             .AddProjections()
+             .AddFiltering();
+            
+             
         }
         
     }
